@@ -1,6 +1,4 @@
-/* 노션플로우 랜딩페이지 스타일 - 블루 테마 */
 :root {
-  /* 기존 크기 및 폰트 설정 유지 */
   --primary-font: "Sofia Sans", sans-serif;
   --secondary-font: var(--primary-font);
   --container-width: 87%;
@@ -33,7 +31,7 @@
   --db-card-gap: 60px;
 }
 
-/* 파란색 배경 */
+/* 배경 섹션 파란색 */
 .notion-yellow_background_co {
   background-color: var(--blue-bg);
   width: 100vw !important;
@@ -49,26 +47,57 @@
 }
 
 /* 버튼 스타일 */
-.bullet-btn {
+.bullet-btn, .nav-cta-btn {
   background: var(--medium-blue);
-  color: var(--light-text);
+  color: #ffffff !important; /* 버튼 텍스트 색상을 흰색으로 강제 지정 */
+  font-weight: 600; /* 더 굵게 설정하여 가독성 향상 */
   border: none;
   border-radius: var(--border-radius);
   font-family: var(--primary-font);
   font-size: 1.125rem;
   font-style: normal;
-  font-weight: 500;
   line-height: 28px;
   padding: 12px 30px;
   display: inline-block;
   transition: all 0.3s ease;
 }
 
-.bullet-btn:hover {
+.bullet-btn:hover, .nav-cta-btn:hover {
   background: var(--dark-blue);
-  color: var(--light-text);
+  color: #ffffff !important; /* 호버 시에도 흰색 유지 */
   opacity: 1;
   transform: translateY(-2px);
+}
+
+/* 할로윈 배너와 같은 어두운 배경의 버튼 텍스트 색상 유지 */
+.notion-callout .bullet-btn, 
+.notion-yellow_background_co .bullet-btn,
+.notion-blue_background_co .bullet-btn,
+.notion-gray_background_co .bullet-btn {
+  color: #ffffff !important;
+}
+
+/* 노션 페이지 제목 숨기기 */
+.notion-title, 
+.notion-collection-header, 
+.notion-page-title,
+.notion-page-header {
+  display: none !important;
+}
+
+/* 타이틀 아래 여백 제거 (제목이 숨겨진 경우 필요할 수 있음) */
+.notion-page-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 특정 HTML 구조에 따라 필요할 수 있는 추가 선택자 */
+h1.notion-title {
+  display: none !important;
+}
+
+.notion-header__title {
+  display: none !important;
 }
 
 /* 강조된 텍스트 스타일 변경 */
@@ -134,6 +163,10 @@ details[open] summary {
 /* 네비게이션 하이라이트 색상 */
 .active-nav {
   color: var(--medium-blue) !important;
+}
+
+.navbar-item {
+  color: var(--navbar-fg-color) !important;
 }
 
 .navbar-item:hover {
